@@ -1,0 +1,18 @@
+header, footer{
+    background-color: #008001;
+}
+
+.bg-green{
+    background-color: #008001;
+}
+.bg-green:hover{
+    background-color: #026302;
+}
+
+body{
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+main{
+    margin-bottom: 100px;
+}
