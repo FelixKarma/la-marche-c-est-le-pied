@@ -11,7 +11,7 @@ const Navbar = () => {
             <nav className='w-50 fs-5'>
                 <ul className="navbar-nav d-flex flex-row justify-content-around">
                     <li className="nav-item ml-2">
-                        <NavLink end to="/" className="nav-link">Acceuil</NavLink>
+                        <NavLink end to="/" className="nav-link">Accueil</NavLink>
                     </li>
                     <li className="nav-item ml-2">
                         <NavLink to="/parcours" className="nav-link">Parcours</NavLink>

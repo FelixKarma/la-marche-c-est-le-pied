@@ -7,6 +7,7 @@ import Evenements from './views/Evenements';
 import APropos from './views/APropos';
 import Footer from './components/tiers-parties/Footer';
 import MentionsLegales from './views/MentionsLegales';
+import Contact from './views/Contact';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/evenements" element={<Evenements />} />
             <Route path="/a_propos" element={<APropos />} />
             <Route path="/mentions_legales" element={<MentionsLegales />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/" exact  element={<Accueil />} />
             {/* <Route path="*" element={<Error />} /> */}
           </Routes>
