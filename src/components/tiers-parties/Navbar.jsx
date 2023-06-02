@@ -23,6 +23,7 @@ const Navbar = () => {
                         <NavLink to="/a_propos" className="nav-link">A propos</NavLink>
                     </li>
                     <li className="nav-item ml-2">
+                        {/* TODO: Mettre l'url correspondante */}
                         <a href="#" target='_blank' className="nav-link">S&apos;inscrire</a>
                     </li>
                 </ul>

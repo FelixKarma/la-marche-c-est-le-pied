@@ -32,7 +32,10 @@ const MentionsLegales = () => {
             </section>
 
             <figure className='text-center'>
-                <Bouton text="S'inscrire" className="bg-green text-white" />
+                {/* TODO: Mettre l'url correspondante */}
+                <a href="http://" target="_blank">
+                <Bouton text="S'inscrire" className="bg-green text-white fs-5" />
+                </a>
             </figure>
         </>
     )
