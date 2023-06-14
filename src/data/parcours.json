@@ -2,6 +2,8 @@
     {
         "date": "2023-05-28",
         "lieu": "Escourt Saint Quentin",
+        "nbPersonnes": 7,
+        "distance": 10,
         "description": "7 marcheurs et en plus avec un très beau soleil, photo prise par Christian",
         "photos": [
             "20230528/20230528_094407.jpg",
@@ -56,6 +58,8 @@
     {
         "date": "2023-05-07",
         "lieu": "Tortequesne",
+        "nbPersonnes": 7,
+        "distance": 10,
         "description": "Ce dimanche sortie sur Tortequesne avec 7 marcheurs malgré ce temps pluvieux. Merci Dominique et Nathalie pour les photos",
         "photos": [
             "20230507/344449937_936725050801664_1333009727153928745_n.jpg",
@@ -107,6 +111,8 @@
     {
         "date": "2023-04-30",
         "lieu": "Leforest à Ostricourt",
+        "nbPersonnes": 7,
+        "distance": 10,
         "description": "Dans le joie et la bonne humeur, 7 marcheurs et le beau temps au rendez vous merci Nathalie pour les photos",
         "photos": [
             "20230430/343662641_4220888304803198_5560186363398640448_n.jpg",
