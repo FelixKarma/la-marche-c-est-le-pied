@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Nom dossiers contenant photos rando
+20230528/
+
+
+# Nom dossiers contenant photos event

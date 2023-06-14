@@ -1,28 +1,47 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
 
 const Card = ({ data }) => {
-    let limit = 7;
-    let screenWidth = window.innerWidth;
+    const [limit, setLimit] = useState(0);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-    if (screenWidth >= 1400) {
-        limit = 7 // Afficher 7 images par ligne pour les écrans larges
-    } else if (screenWidth >= 1200) {
-        limit = 5 // Afficher 5 images par ligne pour les écrans moyens
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        };
 
-    } else if (screenWidth >= 992) {
-        limit = 4 // Afficher 4 images par ligne pour les écrans moyens
+        window.addEventListener('resize', handleResize);
 
-    } else if (screenWidth >= 768) {
-        limit = 3 // Afficher 3 images par ligne pour les écrans moyens
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-    } else if (screenWidth >= 576) {
-        limit = 2 // Afficher 2 images par ligne pour les écrans moyens
-    } else {
-        limit = 1 // Afficher 1 images par ligne pour les petits écrans
-    }
+    useEffect(() => {
+        let sumImageWidth = 0;
+        let newLimit = 0;
+
+        for (const photo of data.photos) {
+            const image = new Image();
+            image.src = `src/assets/img/imgRando/${photo}`;
+            image.onload = () => {
+                const width = (image.naturalWidth * 250) / image.naturalHeight;
+                sumImageWidth += width;
+
+                if (sumImageWidth < screenWidth) {
+                    newLimit++;
+                } else {
+                    setLimit(newLimit);
+                    return;
+                }
+            };
+
+        }
+
+        setLimit(newLimit);
+    }, [data.photos, screenWidth]);
 
     function changeFormateDate(oldDate) {
-        return oldDate.toString().split("-").reverse().join("/");
+        return oldDate.toString().split('-').reverse().join('/');
     }
 
     return (
@@ -33,12 +52,18 @@ const Card = ({ data }) => {
             </div>
             <p className='mx-5'>{data.description}</p>
             <figure className='d-flex justify-content-evenly'>
-                {data.photos.slice(0, limit).map(photo => (
-                    <img className='me-3' key={photo} src={`src/assets/img/imgRando/${photo}`} alt={photo} height={250} />
+                {data.photos.slice(0, limit-1).map(photo => (
+                    <img
+                        className='me-3'
+                        key={photo}
+                        src={`src/assets/img/imgRando/${photo}`}
+                        alt={photo}
+                        height={250}
+                    />
                 ))}
             </figure>
         </>
     );
-}
+};
 
-export default Card
+export default Card;
