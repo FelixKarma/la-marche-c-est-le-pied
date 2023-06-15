@@ -20,7 +20,7 @@ const Card = ({ data }) => {
         let sumImageWidth = 0;
         let newLimit = 0;
 
-        const loadImage = (photo) => {
+        for (const photo of data.photos) {
             const image = new Image();
             image.src = `/public/img/imgRando/${photo}`;
             image.onload = () => {
@@ -31,26 +31,28 @@ const Card = ({ data }) => {
                     newLimit++;
                 } else {
                     setLimit(newLimit);
+                    return;
                 }
             };
-        };
 
-        data.photos.slice(0, limit).forEach(loadImage);
-    }, [data.photos, screenWidth, limit]);
+        }
 
-    function changeFormatDate(oldDate) {
-        return oldDate.split('-').reverse().join('/');
+        setLimit(newLimit);
+    }, [data.photos, screenWidth]);
+
+    function changeFormateDate(oldDate) {
+        return oldDate.toString().split('-').reverse().join('/');
     }
 
     return (
         <>
             <div className='d-flex justify-content-between mx-5'>
                 <h5>Lieu : {data.lieu}</h5>
-                <h5>Le {changeFormatDate(data.date)}</h5>
+                <h5>Le {changeFormateDate(data.date)}</h5>
             </div>
             <p className='mx-5'>{data.description}</p>
             <figure className='d-flex justify-content-evenly'>
-                {data.photos.slice(0, limit).map((photo) => (
+                {data.photos.slice(0, limit-1).map(photo => (
                     <img
                         className='me-3'
                         key={photo}
