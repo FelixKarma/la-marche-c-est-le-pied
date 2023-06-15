@@ -22,7 +22,7 @@ const Card = ({ data }) => {
 
         for (const photo of data.photos) {
             const image = new Image();
-            image.src = `/imgRando/${photo}`;
+            image.src = `public/img/imgRando/${photo}`;
             image.onload = () => {
                 const width = (image.naturalWidth * 250) / image.naturalHeight;
                 sumImageWidth += width;
@@ -56,7 +56,7 @@ const Card = ({ data }) => {
                     <img
                         className='me-3'
                         key={photo}
-                        src={`/imgRando/${photo}`}
+                        src={`public/img/imgRando/${photo}`}
                         alt={photo}
                         height={250}
                     />
