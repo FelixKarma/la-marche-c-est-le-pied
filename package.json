@@ -6,10 +6,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+   
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy --prod",
+    "postdeploy": "npm run deploy-functions",
+    "deploy-functions": "netlify functions:deploy"
   },
   "dependencies": {
     "@formspree/react": "^2.4.2",
