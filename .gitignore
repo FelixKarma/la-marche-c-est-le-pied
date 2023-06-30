@@ -31,3 +31,6 @@ dist-ssr
 
 
 # Nom dossiers contenant photos event
+
+# Local Netlify folder
+.netlify

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import logo from '../../assets/img/logo use.jpg';
 
 const Navbar = () => {
@@ -11,50 +12,79 @@ const Navbar = () => {
 
     return (
         <header className="p-2 d-flex justify-content-between align-items-center text-white">
-            <div className='d-flex align-items-center'>
-                <a href="/"><img src={logo} alt="" height={150} className='rounded-circle' /></a>
-                <h1 className={`text-white fw-bold ms-3   ${isMenuOpen ? 'd-none' : 'd-sm-none d-md-block d-none d-sm-block'}`}>La marche c’est l’pied</h1>
+            <div className="d-flex align-items-center">
+                <a href="/">
+                    <img src={logo} alt="" height={150} className="rounded-circle" />
+                </a>
+                <h1
+                    className={`text-white fw-bold ms-3   ${
+                        isMenuOpen ? 'd-none' : 'd-sm-none d-md-block d-none d-sm-block'
+                    }`}
+                >
+                    La marche c’est l’pied
+                </h1>
             </div>
-            <nav className='w-50 fs-5 navbar navbar-expand-lg'>
+            <nav className="w-50 fs-5 navbar navbar-expand-lg">
                 <button
-                    className='navbar-toggler text-white'
-                    type='button'
+                    className="navbar-toggler text-white"
+                    type="button"
                     onClick={toggleMenu}
                 >
-                    <span className='navbar-toggler-icon text-white'></span>
+                    <span className="navbar-toggler-icon text-white"></span>
                 </button>
                 <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}>
-                    <ul className='navbar-nav d-flex flex-column flex-lg-row w-100 justify-content-evenly'>
-                        <li className='nav-item'>
-                            <NavLink end to='/' className='nav-link text-white' onClick={toggleMenu}>
+                    <ul className="navbar-nav d-flex flex-column flex-lg-row w-100 justify-content-evenly">
+                        <li className="nav-item">
+                            <NavLink
+                                end
+                                to="/"
+                                className="nav-link text-white"
+                                onClick={toggleMenu}
+                            >
                                 Accueil
                             </NavLink>
                         </li>
-                        <li className='nav-item'>
-                            <NavLink to='/parcours' className='nav-link text-white' onClick={toggleMenu}>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/parcours"
+                                className="nav-link text-white"
+                                onClick={toggleMenu}
+                            >
                                 Parcours
                             </NavLink>
                         </li>
-                        <li className='nav-item'>
-                            <NavLink to='/evenements' className='nav-link text-white' onClick={toggleMenu}>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/evenements"
+                                className="nav-link text-white"
+                                onClick={toggleMenu}
+                            >
                                 Evenements
                             </NavLink>
                         </li>
-                        <li className='nav-item'>
-                            <NavLink to='/a_propos' className='nav-link text-white' onClick={toggleMenu}>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/a_propos"
+                                className="nav-link text-white"
+                                onClick={toggleMenu}
+                            >
                                 A propos
                             </NavLink>
                         </li>
-                        <li className='nav-item'>
-                            <a href='#' target='_blank' className='nav-link text-white' onClick={toggleMenu}>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/modalites_inscription"
+                                className="nav-link text-white"
+                                onClick={toggleMenu}
+                            >
                                 S&apos;inscrire
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

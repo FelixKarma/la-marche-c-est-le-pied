@@ -22,7 +22,7 @@ const Card = ({ data }) => {
 
         for (const photo of data.photos) {
             const image = new Image();
-            image.src = `/assets/img/imgRando/${photo}`;
+            image.src = `src/assets/img/imgRando/${photo}`;
             image.onload = () => {
                 const width = (image.naturalWidth * 250) / image.naturalHeight;
                 sumImageWidth += width;
@@ -34,7 +34,6 @@ const Card = ({ data }) => {
                     return;
                 }
             };
-
         }
 
         setLimit(newLimit);
@@ -46,17 +45,17 @@ const Card = ({ data }) => {
 
     return (
         <>
-            <div className='d-flex justify-content-between mx-5'>
+            <div className="d-flex justify-content-between mx-5">
                 <h5>Lieu : {data.lieu}</h5>
                 <h5>Le {changeFormateDate(data.date)}</h5>
             </div>
-            <p className='mx-5'>{data.description}</p>
-            <figure className='d-flex justify-content-evenly'>
-                {data.photos.slice(0, limit-1).map(photo => (
+            <p className="mx-5">{data.description}</p>
+            <figure className="d-flex justify-content-evenly">
+                {data.photos.slice(0, limit - 1).map((photo) => (
                     <img
-                        className='me-3'
+                        className="me-3"
                         key={photo}
-                        src={`/assets/img/imgRando/${photo}`}
+                        src={`src/assets/img/imgRando/${photo}`}
                         alt={photo}
                         height={250}
                     />
