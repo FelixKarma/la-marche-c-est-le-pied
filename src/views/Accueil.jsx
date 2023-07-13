@@ -25,7 +25,7 @@ const Acceuil = () => {
 
     return (
         <div id="accueil">
-            <h3 className="bg-white text-center">
+            <h3 className="bg-success-subtle text-center">
                 {distanceTotal}km ont déjà été parcourus !
             </h3>
 

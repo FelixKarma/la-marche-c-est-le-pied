@@ -27,7 +27,7 @@ const Card = ({ data }) => {
                 const width = (image.naturalWidth * 250) / image.naturalHeight;
                 sumImageWidth += width;
 
-                if (sumImageWidth < screenWidth) {
+                if (sumImageWidth < screenWidth - 50) {
                     newLimit++;
                 } else {
                     setLimit(newLimit);
